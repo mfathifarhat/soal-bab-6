@@ -1,6 +1,6 @@
 N = int(input("Bilangan bulat :"))
 
-if 2 <= N <= 20:
+if 1 <= N <= 8:
     skor = []
     kemungkinan = []
 
@@ -10,7 +10,7 @@ if 2 <= N <= 20:
         skorGrup = []
         for a in input().strip().split(" "):
             skorGrup.append(int(a))
-            if int(a) < 1 or int(a) > 100000:
+            if int(a) < 2 or int(a) > 5:
                 melewatiBatasan = True
         skor.append(skorGrup)
     

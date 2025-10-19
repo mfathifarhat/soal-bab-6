@@ -1,33 +1,44 @@
 N = int(input().strip())
 
-strings = [input().strip() for _ in range(N)]
+if 1 <= N <= 50 :
 
-matrix = [[i for i in range(len(strings))]]
+    strings = [input().strip() for _ in range(N)]
 
-terpanjang = []
-
-for i in strings:
-    panjang = 0
-    frekuensi = {}
-    isGanjil = False
+    terpanjang = []
     
-    for s in i:
-        if s in frekuensi:
-            frekuensi[s] += 1
-        else:
-            frekuensi[s] = 1
+    melewatiBatasan = False
     
-    for a in frekuensi.values():
-        if a % 2 == 0:
-            panjang += a
-        else:
-            panjang += (a - 1)
-            isGanjil = True
+    for i in strings:
+        if 1 <= len(i) <= 50: melewatiBatasan = False
+        else : melewatiBatasan = True
+
+    if melewatiBatasan == False:
+        for i in strings:
+            panjang = 0
+            frekuensi = {}
+            isGanjil = False
             
-    if isGanjil == True:
-        panjang += 1
+            for s in i:
+                if s in frekuensi:
+                    frekuensi[s] += 1
+                else:
+                    frekuensi[s] = 1
             
-    terpanjang.append(panjang)
-    
-for i in terpanjang:
-    print(i)
+            for a in frekuensi.values():
+                if a % 2 == 0:
+                    panjang += a
+                else:
+                    panjang += (a - 1)
+                    isGanjil = True
+                    
+            if isGanjil == True:
+                panjang += 1
+                    
+            terpanjang.append(panjang)
+            
+        for i in terpanjang:
+            print(i)
+    else :
+        print("Melampaui batas")
+else :
+    print("Melampaui batas")
