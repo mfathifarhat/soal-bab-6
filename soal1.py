@@ -1,10 +1,24 @@
 N = int(input("Masukkan bilangan bulat :\n"))
 
-listBilangan = [int(input().strip()) for _ in range(N)]
+if 1 <= N <= 100000:
+    
+    listBilangan = [int(input().strip()) for _ in range(N)]
 
-listBilangan.sort()
+    melewatiBatasan = False
+    
+    for i in listBilangan:
+        if i < 1 or i > 100:
+            melewatiBatasan = True
 
-if (len(listBilangan) % 2 != 0):
-    print(listBilangan[(len(listBilangan)//2)])
-else:
-    print((listBilangan[(len(listBilangan)//2)] + listBilangan[((len(listBilangan)//2) - 1)]) / 2)
+    if melewatiBatasan == False:
+        listBilangan.sort()
+
+        if (len(listBilangan) % 2 != 0):
+            print(f"Median : {listBilangan[(len(listBilangan)//2)]}")
+        else:
+            print(f"Median : {(listBilangan[(len(listBilangan)//2)] + listBilangan[((len(listBilangan)//2) - 1)]) / 2}")
+    else :
+        print("Melampaui batasan")
+        
+else :
+    print("Melampaui batasan")
