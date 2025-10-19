@@ -1,10 +1,6 @@
-bilanganBulat = int(input("Masukkan bilangan bulat :\n"))
+N = int(input("Masukkan bilangan bulat :\n"))
 
-count = 0
-listBilangan = []
-while count < bilanganBulat:
-    count += 1
-    listBilangan.append(float(input("Nilai kualitas baju :")))
+listBilangan = [int(input().strip()) for _ in range(N)]
 
 listBilangan.sort()
 
