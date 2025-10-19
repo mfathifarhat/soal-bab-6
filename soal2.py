@@ -8,15 +8,13 @@ def fpb(a,b):
     else:
         return fpb(b, a % b)
 
-faktorisasi = []
+def kpk(a,b):
+    return a * b / fpb(a,b)
 
-hasilFpb = frekuensi[0]
-hasilKali = 1
+hasilKpk = kpk(frekuensi[0], frekuensi[0 + 1])
 
-for i in range(1, len(frekuensi)):
-    hasil = fpb(hasilFpb, frekuensi[i])
-    
-for i in frekuensi:
-    hasilKali *= i  
-    
-print(hasilKali/hasilFpb)
+if len(frekuensi) > 2:
+    for i in range(2, len(frekuensi)):
+        hasilKpk = kpk(hasilKpk, frekuensi[i])
+
+print(hasilKpk)
