@@ -9,8 +9,9 @@ if 1 <= N <= 50 :
     melewatiBatasan = False
     
     for i in strings:
-        if 1 <= len(i) <= 50: melewatiBatasan = False
+        if 1 <= len(i) <= 50 and i.isalpha(): melewatiBatasan = False
         else : melewatiBatasan = True
+        
 
     if melewatiBatasan == False:
         for i in strings:

@@ -10,7 +10,11 @@ if 1 <= N <= 8:
         skorGrup = []
         for a in input().strip().split(" "):
             skorGrup.append(int(a))
-            if int(a) < 2 or int(a) > 5:
+            
+        if int(skorGrup[0]) < 2 or int(skorGrup[0]) > 5:
+            melewatiBatasan = True
+        for a in skorGrup[1:]:
+            if a < 0 or a > 100:
                 melewatiBatasan = True
         skor.append(skorGrup)
     
